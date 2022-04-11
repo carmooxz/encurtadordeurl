@@ -1,0 +1,67 @@
+<html>
+<meta charset="utf-8">
+        <head>
+             
+             <center><img src="C:\Users\mrsil\OneDrive\Desktop\site url\logo_blue.png"  height="40%" widht="40%" align="center"></></center>
+       
+             <h1 align="center">Encurtador de URL</h1>
+             <h2 align= "center down">cole o link para ser encurtado</h2>
+
+              <title>Encurtador de url</title>
+        </head>
+               <body style="background-color:#DDFFF7;">
+        
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+function myFunction() {
+  var valor = document.getElementById("flink").value;
+  $.getJSON( "https://is.gd/create.php?callback=?", {
+    url: valor,
+    format: "json"
+}).done(function( data ) {
+    let novolink = data.shorturl;
+	console.log(novolink);
+	if(novolink!==undefined)
+	document.getElementById("h2resp").innerHTML = novolink;
+	else document.getElementById("h2resp").innerHTML = "Erro ao gerar link";
+});
+}
+</script>
+
+<style> 
+.cinput {
+  font-size: 24px;
+}
+</style>
+
+</head>
+<body>
+
+<form id="myForm" >
+  <input class= "cinput" type="text" name="flink" id="flink" placeholder="Insira o link original" >  
+  <input class="cinput" type="button" onclick="myFunction()" value="Gerar Link">
+</form>
+<h2>Link Gerado</h2>
+<h2 id="h2resp"></h2>
+
+
+
+<a href="https://wa.me/?text=Acesse%20http://seusite.com.br"> 
+     Compartilhar no WhatsApp
+</a>
+
+<br></br>
+
+<p> O encurtador Urls ajuda você que não quer dar aquela imagem poluida ao seu site, blog, rede social entre outros usando um url grande, é facíl, rapido e melhor ainda é de graça.<p> 
+
+         <br></br>
+
+        <footer>
+             <p align="center" style="color:#30706F;"> Feito por Hingrid Carmo</p>
+             <p align="center" style="color:#30706F;"> E-mail:hingrid2809@outlook.com
+
+
+
+        </body>
+</html>
